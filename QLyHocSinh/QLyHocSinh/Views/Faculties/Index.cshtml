@@ -1,0 +1,34 @@
+﻿@model IEnumerable<QLyHocSinh.Models.Faculty>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.facultyName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.facultyName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.facultyId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.facultyId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.facultyId })
+        </td>
+    </tr>
+}
+
+</table>
